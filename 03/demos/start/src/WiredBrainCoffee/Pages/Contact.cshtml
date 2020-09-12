@@ -10,34 +10,41 @@
         <small>We'd love to hear from you.</small>
     </h1>
     <hr />
+    @if(!String.IsNullOrEmpty(Model.Message)) {
+        <div class="alert alert-success">@Model.Message</div>
+    }
     <div class="row">
         <div class="col-md-8 mb-4">
             <p>Life gets busy but we try to respond with 24 hours.  If you have a more immediate question, give us a ring using the number over on the right. We are crazy friendly!</p>
             <br />
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form asp-page="Contact" method="post">
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Name:</label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                        <label asp-for="Contact.Name">Name:</label>
+                        <input asp-for="Contact.Name" class="form-control">
+                        <span asp-validation-for="Contact.Name"></span>
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Phone Number:</label>
-                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        <label asp-for="Contact.Phone">Phone Number:</label>
+                        <input asp-for="Contact.Phone" class="form-control">
+                        <span asp-validation-for="Contact.Phone"></span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Email:</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        <label asp-for="Contact.Email">Email:</label>
+                        <input asp-for="Contact.Email" class="form-control">
+                        <span asp-validation-for="Contact.Email"></span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Message:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        <label asp-for="Contact.Message">Message:</label>
+                        <textarea asp-for="Contact.Message" rows="10" cols="100" class="form-control"></textarea>
+                        <span asp-validation-for="Contact.Message"></span>
                     </div>
                 </div>
                 <div id="success"></div>
