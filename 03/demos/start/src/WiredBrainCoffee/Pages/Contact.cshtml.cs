@@ -28,5 +28,11 @@ namespace WiredBrainCoffee.Pages
                 Message = "Your message has been sent.";
             }
         }
+
+        public void OnPostSubscribe(string subscribeEmail)
+        {
+            EmailService.SendEmail(subscribeEmail);
+            Message = "You are suscribe now, thanks!";
+        }
     }
 }
