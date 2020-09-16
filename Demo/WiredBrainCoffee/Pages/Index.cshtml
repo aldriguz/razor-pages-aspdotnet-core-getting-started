@@ -97,17 +97,19 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title">Popular Brews</h2>
-                    <p><span class="card-text text-success">Pumpkin Latte</span> - A refreshing pumpkin flavored drink, with a hint of mocha and spice. <i>350 calories</i><i> $3.49</i></p>
-                    <p><span class="card-text text-success">Light Mocha</span> - All the mocha flavoring with just a few of the calories. <i>100 calories</i><i> $2.99</i></p>
-                    <p><span class="card-text text-success">Vanilla Cappucino</span> - The natural sweetness of vanilla ensures minimal sugar and calories. <i>150 calories</i><i> $3.99</i></p>
+            <cache expires-after="TimeSpan.FromDays(1)" vary-by-query="time">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Popular Brews <small>as of @DateTime.Now</small></h2>
+                        <p><span class="card-text text-success">Pumpkin Latte</span> - A refreshing pumpkin flavored drink, with a hint of mocha and spice. <i>350 calories</i><i> $3.49</i></p>
+                        <p><span class="card-text text-success">Light Mocha</span> - All the mocha flavoring with just a few of the calories. <i>100 calories</i><i> $2.99</i></p>
+                        <p><span class="card-text text-success">Vanilla Cappucino</span> - The natural sweetness of vanilla ensures minimal sugar and calories. <i>150 calories</i><i> $3.99</i></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-success">Full Menu</a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success">Full Menu</a>
-                </div>
-            </div>
+            </cache>
         </div>
         <div class="col-md-4">
             <div class="card">
