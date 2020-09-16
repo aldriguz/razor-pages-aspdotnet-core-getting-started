@@ -64,5 +64,27 @@ namespace WiredBrainCoffee.Services
                 }
             };
         }
+
+        public List<MenuItem> GetPopularItems()
+        {
+            return new List<MenuItem>()
+            {
+                new MenuItem()
+                {                 
+                    Name = "Frosted Pumpkin Bread",
+                    Summary = "A seasonal delight we offer every autumn.  Pumpking bread with just a bit of spice, cream cheese frosting with just a hint of home.",
+                },
+                new MenuItem()
+                {
+                    Name = "Fresh Bagels",
+                    Summary = "They're just as round as donuts, but far more healthy! Freshly made every morning before sunrise.",
+                },
+                new MenuItem()
+                {
+                    Name = "Fresh Fruit",
+                    Summary = "We've got strawberries, blueberries, apples, bananas - we could list them all, but we'd prefer you come take a look!",
+                }
+            };
+        }
     }
 }

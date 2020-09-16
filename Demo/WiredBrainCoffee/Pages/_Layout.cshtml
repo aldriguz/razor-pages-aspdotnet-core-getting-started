@@ -56,8 +56,16 @@
                     <p class="m-0 text-white">Phone: 555-555-1234 <br />Address: 1234 Test <br />Email: Care@WiredBrain.com</p>
                 </div>
                 <div class="col-md-4">
-                    <p class="m-0 text-white">Coffee Fact of the Day</p>
-                    <p class="m-0 text-white">More cups of coffee are drank every day than there are people on earth. <i>(May not be true)</i></p>
+                    @if (IsSectionDefined("FooterThird"))
+                    {
+                        RenderSection("FooterThird");
+                    }
+                    else
+                    {
+                        <p class="m-0 text-white">Coffee Fact of the Day</p>
+                        <p class="m-0 text-white">More cups of coffee are drank every day than there are people on earth. <i>(May not be true)</i></p>
+                    }
+
                 </div>
             </div>
         </div>
