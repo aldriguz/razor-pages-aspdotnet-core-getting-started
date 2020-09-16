@@ -77,24 +77,7 @@
     <hr class="mb-5">
     <div class="row">
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h2>Download our App</h2>
-                    <div class="description">
-                        <p>Stay wired on the go with these benefits:</p>
-                        <ul>
-                            <li>Coupons and promotions</li>
-                            <li>Brainiacs club benefits</li>
-                            <li>Store locator</li>
-                            <li>Latest menu options</li>
-                        </ul>
-                    </div>
-                    <img class="img-fluid rounded" src="~/images/download-small.png" alt="">
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-success">Download</a>
-                </div>
-            </div>
+            <partial name="MobileWidget" model="@("Download today")" />
         </div>
         <div class="col-md-4">
             <cache expires-after="TimeSpan.FromDays(1)" vary-by-query="time">
