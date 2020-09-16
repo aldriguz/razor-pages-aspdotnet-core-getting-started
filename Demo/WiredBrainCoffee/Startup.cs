@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,6 +26,11 @@ namespace WiredBrainCoffee
             {
                 options.Conventions.AddPageRoute("/index", "home");
                 options.Conventions.AddPageRoute("/index", "wired");
+            });
+
+            services.Configure<RouteOptions>(options =>
+            {
+                options.ConstraintMap.Add("promo", typeof(PromoConstraint));
             });
         }
 
